@@ -1,46 +1,81 @@
 @import "colors";
 @import "functions";
+@import "variables";
 
 @mixin font-size($size) {
   font-size: $size;
   font-size: calculateRem($size);
 }
+//bem
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
 
-@mixin push--auto($vertically: false) {
-  @if $vertically {
-    margin: {
-      top: $vertically;
-      bottom: $vertically;
-      left: auto;
-      right: auto;
+  .#{$B} {
+    @content;
+  }
+}
+
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
     }
   } @else {
-    margin: {
-      left: auto;
-      right: auto;
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
     }
   }
 }
 
-@mixin font-roboto($size: false, $colour: false, $weight: false,  $lh: false) {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
-  @if $size {
-    font-size: $size;
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
   }
-  @if $colour {
-    color: $colour;
-  }
-  @if $weight {
-    font-weight: $weight;
-  }
-  @if $lh {
-    line-height: $lh;
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
   }
 }
 
-@mixin text-small-grey(){
-  color: rgba(0,0,0,.54);
-  font-size: 14px;
-  text-transform: none;
-  text-decoration: none;
+@mixin meb($modifier: false, $element: $E, $block: $B) {
+  $selector: &;
+  $modifierCombo: '';
+
+  @if $modifier {
+    $modifierCombo: $modifier-separator + $modifier;
+  }
+
+  @at-root {
+    #{$selector} {
+      .#{$block+$element-separator+$element+$modifierCombo} {
+        @content
+      }
+    }
+  }
+}
+
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
 }

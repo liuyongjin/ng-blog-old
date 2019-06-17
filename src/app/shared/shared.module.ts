@@ -8,9 +8,23 @@ import { ErrorComponent } from './pages/error/error.component';
 import { LoadingComponent } from './pages/loading/loading.component';
 
 @NgModule({
-  declarations: [ErrorComponent, LoadingComponent,ContentComponent,LeftComponent,TopComponent],
+  declarations: [
+    ErrorComponent, 
+    LoadingComponent, 
+    ContentComponent, 
+    LeftComponent, 
+    TopComponent
+  ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    CommonModule,
+    ErrorComponent,
+    LoadingComponent,
+    ContentComponent,
+    LeftComponent,
+    TopComponent
   ]
 })
 export class SharedModule { }
