@@ -1,7 +1,7 @@
 <div class="ng-blog-flex">
   <app-left class="ng-blog-flex__left"></app-left>
   <div class="ng-blog-flex--flex-1">
-    <app-top class="ng-blog-top"></app-top>
+    <app-top class="ng-blog-top" (selectLang)="selectLanguage($event)"></app-top>
     <router-outlet></router-outlet>
   </div>
 </div>

@@ -1,3 +1,9 @@
 <header class="header">
   top works!
+  <h1> {{ 'APP_TITLE' | translate }} </h1>
+  <br>
+  <nz-range-picker [(ngModel)]="dateRange" (ngModelChange)="onChange($event)"></nz-range-picker>
+  <br>
+  <button (click)="selectLanguage('zh_CN')">中文</button>
+  <button (click)="selectLanguage('en_US')">英文</button>
 </header>
