@@ -17,6 +17,11 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/*": [ "src/app/*" ],
+      "@blog/*": [ "src/app/modules/blog/*" ],
+      "@styles/*": [ "src/app/styles/*" ]
+    }
   }
 }

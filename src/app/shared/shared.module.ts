@@ -1,28 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContentComponent } from './components/content/content.component';
 import { LeftComponent } from './components/left/left.component';
 import { TopComponent } from './components/top/top.component';
-
-import { ErrorComponent } from './pages/error/error.component';
 import { LoadingComponent } from './pages/loading/loading.component';
+import { Error404Component } from './pages/error404/error404.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
-    ErrorComponent, 
+    Error404Component,
     LoadingComponent, 
-    ContentComponent, 
     LeftComponent, 
     TopComponent
   ],
   imports: [
+    RouterModule,
     CommonModule
   ],
   exports: [
     CommonModule,
-    ErrorComponent,
     LoadingComponent,
-    ContentComponent,
     LeftComponent,
     TopComponent
   ]

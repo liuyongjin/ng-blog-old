@@ -1,3 +1,7 @@
-[nz-button] {
-    margin-right: 8px;
+@import '~@app/styles/mixins';
+@include b(top){
+    display: block;
+    height: 60px;
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
 }

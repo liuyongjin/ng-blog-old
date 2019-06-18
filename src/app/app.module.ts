@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { BlogModule } from './modules/blog/blog.module';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,9 +16,10 @@ registerLocaleData(zh);
 @NgModule({
   declarations: [
     AppComponent
-  ],
+  ],  
   imports: [
     SharedModule,
+    BlogModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgZorroAntdModule,

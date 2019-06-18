@@ -5,10 +5,8 @@
   @return $remSize * 1rem;
 }
 
-/* BEM support Func
- -------------------------- */
+// BEM support Func
 
 @function hitAllSpecialNestRule($selector) {
-
   @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
 }

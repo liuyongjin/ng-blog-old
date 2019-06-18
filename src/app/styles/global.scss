@@ -3,21 +3,33 @@
 //公共样式__bem
 @include b(flex){
   display: flex;
-  @include e(flex-1){
+  @include m(flex-1){
     flex: 1;
   }
-  @include m(test){
-    background: #000000;
+  @include m(j-center){
+    justify-content: center;
   }
-  @include when(istest){
-    background: #000000;
+  @include m(a-center){
+    align-items: center;
   }
+  @include e(left){
+    width: 260px;
+  }
+  // @include m(test){
+  //   background: #000000;
+  // }
+  // @include when(istest){
+  //   background: #000000;
+  // }
+  // @include meb(aaa){
+  //   background: #000000;
+  // }
 }
+
 
 @include b(flex-wrap){
   flex-wrap: wrap;
 }
-
 
 
 // MATERIAL
