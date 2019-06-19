@@ -1,7 +1,13 @@
-<div class="ng-blog-flex">
-  <app-left class="ng-blog-flex__left"></app-left>
-  <div class="ng-blog-flex--flex-1">
-    <app-top class="ng-blog-top" (selectLang)="selectLanguage($event)"></app-top>
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<nz-layout>
+  <nz-sider>
+    <app-left class="ng-blog-flex__left"></app-left>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <app-top (selectLang)="selectLanguage($event)"></app-top>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

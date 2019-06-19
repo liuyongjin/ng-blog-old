@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
+import { NgZorroAntdModule} from 'ng-zorro-antd';
 import { CommonModule } from '@angular/common';
-
-import { LoadingComponent } from './pages/loading/loading.component';
-import { Error404Component } from './pages/error404/error404.component';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
-    Error404Component,
-    LoadingComponent,
   ],
   imports: [
-    CommonModule
+    NgZorroAntdModule,
+    TranslateModule,
+    CommonModule,
   ],
   exports: [
-    CommonModule,
-    LoadingComponent
+    NgZorroAntdModule,
+    TranslateModule,
+    CommonModule
   ]
 })
 export class SharedModule { }

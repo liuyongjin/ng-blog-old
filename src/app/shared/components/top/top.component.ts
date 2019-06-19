@@ -6,11 +6,10 @@ import { addDays } from 'date-fns';
   styleUrls: ['./top.component.scss']
 })
 export class TopComponent implements OnInit {
-  @Output() //发射事件需要写上Output
-  //EventEmitter需要一个范型
-  selectLang: EventEmitter<string> = new EventEmitter();
+  //发射事件需要写上Output EventEmitter需要一个范型
+  @Output()selectLang: EventEmitter<string> = new EventEmitter();
 
-  dateRange = [ new Date(), addDays(new Date(), 3) ];
+  date = new Date();
 
   constructor() { }
 

@@ -1,0 +1,51 @@
+@import '../../../styles/mixins';
+
+@include b(about-us) {
+    min-height: 90vh;
+    min-height: calc(100vh - 84px);
+    background-color: $white;
+    color: $font-color2;
+
+    .ant-tag {
+        margin-bottom: 8px;
+    }
+    nz-table{
+        margin-top: 30px;
+    }
+    @include e(title) {
+        border-left: 5px solid $black;
+        padding: 18px 30px;
+        color: $font-color;
+        font-weight: 300;
+        font-size: 26px;
+    }
+
+    @include e(content) {
+        padding: 18px 30px;
+    }
+
+    @include e(h1) {
+        font-size: 20px;
+        font-weight: 700;
+        color: $font-color2;
+        padding-bottom: 8px;
+        border-bottom: 1px solid $d-color;
+    }
+
+    @include e(p) {
+        p {
+            line-height: 30px;
+            font-size: 16px;
+        }
+
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    @include e(desc) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        line-height: 30px;
+        font-size: 14px;
+    }
+}

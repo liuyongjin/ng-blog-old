@@ -4,10 +4,13 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { HomeComponent } from '@blog/home/home.component';
 import { AboutUsComponent } from '@blog/about-us/about-us.component';
 import { PigeonholeComponent } from '@blog/pigeonhole/pigeonhole.component';
+import { SharedModule } from '@app/shared/shared.module';
+
 @NgModule({
   declarations: [HomeComponent, AboutUsComponent, PigeonholeComponent],
   imports: [
-    BlogRoutingModule
+    BlogRoutingModule,
+    SharedModule
   ]
 })
 export class BlogModule { }

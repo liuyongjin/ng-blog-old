@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LeftComponent } from './shared/components/left/left.component';
 import { TopComponent } from './shared/components/top/top.component';
+import { Error404Component } from '@app/shared/pages/error404/error404.component';
+import { LoadingComponent } from '@app/shared/pages/loading/loading.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { BlogModule } from './modules/blog/blog.module';
@@ -17,7 +19,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 registerLocaleData(zh);
 
-function HttpLoaderFactory(httpClient: HttpClient) {
+export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, '../assets/i18n/', '.json');
 }
 
@@ -25,8 +27,10 @@ function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent,
     LeftComponent,
-    TopComponent
-  ],  
+    TopComponent,
+    Error404Component,
+    LoadingComponent
+  ],
   imports: [
     SharedModule,
     BlogModule,

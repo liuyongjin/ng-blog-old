@@ -1,0 +1,29 @@
+@import '../../../styles/mixins';
+
+@include b(aside){
+    text-align: center;
+    @include e(up){
+        height: 180px;
+        background-color: $black;
+        position: relative;
+        nz-avatar{
+            bottom: -40px;
+            left: 50%;
+            margin-left: -40px;
+            position: absolute;
+        }
+    }
+    @include e(down){
+        h3{
+            font-size: 40px;
+            color: $title-color;
+            margin-top: 60px;
+        }
+        ul>li{
+            line-height: 30px;
+            a{
+                color: $font-color;
+            }
+        }
+    }
+}

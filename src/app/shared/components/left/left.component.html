@@ -1,13 +1,27 @@
-<aside class="aside">
-  <nav>
-    <a routerLink="/home">
-      Home
-    </a>
-    <a routerLink="/about-us">
-      about-us
-    </a>
-    <a routerLink="/pigeonhole">
-      pigeonhole
-    </a>
-  </nav>
+<aside class="ng-blog-aside">
+  <div class="ng-blog-aside__up">
+    <nz-avatar [nzSize]="80" nzIcon="user"></nz-avatar>
+  </div>
+  <div class="ng-blog-aside__down">
+    <h3>L&nbsp;Y&nbsp;J</h3>
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/home">
+            {{ 'HOME' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/pigeonhole">
+            {{'PIGEONHOLE'| translate}}
+          </a>
+        </li>
+        <li>
+            <a routerLink="/about-us">
+              {{'ABOUT_US'| translate}}
+            </a>
+          </li>
+      </ul>
+    </nav>
+  </div>
 </aside>

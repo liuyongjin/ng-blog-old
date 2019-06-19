@@ -1,3 +1,16 @@
 {
-    "APP_TITLE":"personal-blog"
+    "MY_NAME":"L Y J",
+    "APP_TITLE":"personal-blog",
+    "HOME":"Home",
+    "ABOUT_US":"About Us",
+    "PIGEONHOLE":"Pigeonhole",
+    "RESUME":"RESUME",
+    "EMAIL":"EMAIL",
+    "POSITION":"POSITION",
+    "JOB":"FRONT END ENGINEER",
+    "INDIVIDUAL_RESUME":"INDIVIDUAL RESUME",
+    "INDIVIDUAL_DESC":"Love front-end technology, like to study all kinds of cutting-edge technology;Like games, basketball;Can't rap, dance or sing",
+    "GOOD_AT_SKILLS":"GOOD AT SKILLS",
+    "SKILLS":"SKILLS",
+    "FRAME":"FRAME"
 }

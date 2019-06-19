@@ -1,0 +1,15 @@
+@import '../../../styles/mixins';
+@include b(header){
+    @include e(right){
+        text-align: right;
+    }
+    @include e(github){
+        color: $title-color;
+        font-size: 25px;
+        margin-right: 20px;
+    }
+}
+[nz-dropdown]{
+    color: $title-color;
+    font-size: 25px;
+}

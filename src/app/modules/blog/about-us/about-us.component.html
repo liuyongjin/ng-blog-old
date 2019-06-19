@@ -1,3 +1,35 @@
-<p>
-  about-us works!
-</p>
+<div class="ng-blog-about-us">
+  <h3 class="ng-blog-about-us__title">{{ 'RESUME' | translate }}</h3>
+  <div class="ng-blog-about-us__content">
+    <h1 class="ng-blog-about-us__h1">{{ 'MY_NAME' | translate }}</h1>
+    <div class="ng-blog-about-us__p">
+      <p>
+        <strong>{{ 'EMAIL' | translate }}</strong>: <a href="https://www.baidu.com" target="_blank">572551431@qq.com</a>
+      </p>
+      <p>
+        <strong>{{ 'POSITION' | translate }}</strong>: <span>{{ 'JOB' | translate }}</span>
+      </p>
+    </div>
+    <h1 class="ng-blog-about-us__h1">{{ 'INDIVIDUAL_RESUME' | translate }}</h1>
+    <p class="ng-blog-about-us__desc">
+        {{ 'INDIVIDUAL_DESC' | translate }}
+    </p>
+    <h1 class="ng-blog-about-us__h1">{{ 'GOOD_AT_SKILLS' | translate }}</h1>
+    <nz-table #basicTable nzBordered [nzShowPagination]="false" [nzData]="listOfData">
+      <thead>
+        <tr>
+          <th nzWidth="50%" nzAlign="center">{{ 'SKILLS' | translate }}</th>
+          <th nzWidth="50%" nzAlign="center">{{ 'FRAME' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of basicTable.data">
+          <td nzAlign="center">{{ data.skill }}</td>
+          <td nzAlign="center">
+            <nz-tag *ngFor="let tag of data.frame" [nzColor]="tag.color">{{ tag.name }}</nz-tag>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
