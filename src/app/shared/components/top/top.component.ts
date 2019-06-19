@@ -1,5 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { addDays } from 'date-fns';
+import { Component, OnInit, EventEmitter, Output , ElementRef } from '@angular/core';
+
 @Component({
   selector: 'app-top',
   templateUrl: './top.component.html',
@@ -11,17 +11,12 @@ export class TopComponent implements OnInit {
 
   date = new Date();
 
-  constructor() { }
+  constructor(private el: ElementRef) { }
 
   ngOnInit() {
+ 
   }
   public selectLanguage(lang: string): void {
     this.selectLang.emit(lang);
   }
-
-  onChange(result: Date): void {
-    console.log('onChange: ', result);
-  }
-
-
 }

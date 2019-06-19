@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LeftComponent } from './shared/components/left/left.component';
 import { TopComponent } from './shared/components/top/top.component';
+import { ContentComponent } from './shared/components/content/content.component';
 import { Error404Component } from '@app/shared/pages/error404/error404.component';
 import { LoadingComponent } from '@app/shared/pages/loading/loading.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppComponent,
     LeftComponent,
     TopComponent,
+    ContentComponent,
     Error404Component,
     LoadingComponent
   ],

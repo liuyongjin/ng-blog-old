@@ -43,6 +43,16 @@ export class AboutUsComponent implements OnInit {
         name: 'NG-ZORRO',
         color: 'blue'
       }]
+    },
+    {
+      skill: 'jquery',
+      frame: [{
+        name: 'layui',
+        color: 'blue'
+      },{
+        name: 'bootstrap',
+        color: 'red'
+      }]
     }
   ];
   constructor() { }

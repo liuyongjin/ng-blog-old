@@ -2,12 +2,10 @@
   <nz-sider>
     <app-left class="ng-blog-flex__left"></app-left>
   </nz-sider>
-  <nz-layout>
-    <nz-header>
-      <app-top (selectLang)="selectLanguage($event)"></app-top>
-    </nz-header>
+  <nz-layout #layout>
+    <app-top (selectLang)="selectLanguage($event)" #appTop></app-top>
     <nz-content>
-      <router-outlet></router-outlet>
+      <app-content></app-content>
     </nz-content>
   </nz-layout>
 </nz-layout>

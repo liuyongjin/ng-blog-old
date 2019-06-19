@@ -1,5 +1,15 @@
 @import '../../../styles/mixins';
 @include b(header){
+    position: fixed;
+    top: 0;
+    left: 200px;
+    width: 80%;
+    width: calc(100vw - 200px);
+    height: 64px;
+    line-height: 64px;
+    padding: 0 20px;
+    background-color: $white;
+    transition: top 1s;
     @include e(right){
         text-align: right;
     }
@@ -8,8 +18,8 @@
         font-size: 25px;
         margin-right: 20px;
     }
-}
-[nz-dropdown]{
-    color: $title-color;
-    font-size: 25px;
+    [nz-dropdown]{
+        color: $title-color;
+        font-size: 25px;
+    }
 }

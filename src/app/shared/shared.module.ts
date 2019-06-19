@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NgZorroAntdModule} from 'ng-zorro-antd';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [
     NgZorroAntdModule,
     TranslateModule,
-    CommonModule,
+    CommonModule
   ],
   exports: [
     NgZorroAntdModule,

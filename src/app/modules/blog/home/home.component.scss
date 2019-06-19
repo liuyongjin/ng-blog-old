@@ -1,7 +1,8 @@
 @import '../../../styles/mixins';
 @import '../../../styles/mixins';
 @include b(home){
-    min-height: 90vh;
-    min-height: calc(100vh - 84px);
+    min-height: 300vh;
+    // min-height: 90vh;
+    // min-height: calc(100vh - 84px);
     background-color: $white;
 }

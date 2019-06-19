@@ -1,19 +1,30 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, ViewChild, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { en_US, zh_CN, NzI18nService } from 'ng-zorro-antd';
-
+import { fromEvent } from 'rxjs';
+import { throttleTime } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
+  @ViewChild("layout") layout: any;
+  @ViewChild("appTop") appTop: any;
+  private scroll = null;
+  private lastScrollTop = 0;
   //en-US zh-CN
   constructor(public translate: TranslateService, private i18n: NzI18nService, @Inject(PLATFORM_ID) private platformId: Object) {
   }
-  async ngOnInit() {
+  ngOnInit() {
+    this.initLanguage();
+  }
+  ngAfterViewInit(): void {
+    this.initScroll();
+  }
+  public async initLanguage() {
     this.translate.setDefaultLang('zh_CN');
     // 语言初始化(若未设置语言, 则取浏览器语言)
     let currentLanguage = await localStorage.getItem('currentLanguage') || this.translate.getBrowserCultureLang()
@@ -26,6 +37,7 @@ export class AppComponent implements OnInit {
       localStorage.setItem('currentLanguage', currentLanguage);
     }
   }
+
   public selectLanguage(lang: string): void {
     this.translate.use(lang);
     this.i18n.setLocale(lang === 'en_US' ? en_US : zh_CN);
@@ -33,5 +45,27 @@ export class AppComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('currentLanguage', lang)
     }
+  }
+
+  private initScroll(): void {
+    //滚动隐藏导航动画
+    let nav = this.appTop.el.nativeElement.querySelector('.ng-blog-header');
+    nav.style.top='0px';
+    this.scroll = fromEvent(this.layout.elementRef.nativeElement, 'scroll').pipe(throttleTime(100)).subscribe((e: Event) => {
+      let target = <HTMLElement>e.target;
+      let scrollTop = target.scrollTop;
+      let diff = scrollTop - this.lastScrollTop > 0;
+      if (scrollTop > 70 && diff && nav.style.top === '0px') {
+        nav.style.top = '-64px';
+      } else if (scrollTop < 70 && nav.style.top === '-64px') {
+        nav.style.top = '0px';
+      } else if (scrollTop > 70 && !diff && nav.style.top === '-64px') {
+        nav.style.top = '0px';
+      }
+      this.lastScrollTop = scrollTop;
+    });
+  }
+  ngOnDestory() {
+    this.scroll.unsubscribe();
   }
 }
