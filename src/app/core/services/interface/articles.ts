@@ -1,6 +1,6 @@
 export interface Articles {
     data:object[];
-    page:number;
+    page:string;
     per_page:number;
     total:number;
     total_pages:number;
