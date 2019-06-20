@@ -7,7 +7,7 @@ import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 // import { HttpClient } from '@angular/common/http';
 import { ArticlesService } from './core/services';
-import {Articles} from './core/services/interface/articles';
+import {Articles} from './core/interface/articles';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
