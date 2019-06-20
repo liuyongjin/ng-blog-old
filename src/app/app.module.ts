@@ -6,13 +6,15 @@ import { LeftComponent } from './shared/components/left/left.component';
 import { TopComponent } from './shared/components/top/top.component';
 import { ContentComponent } from './shared/components/content/content.component';
 import { Error404Component } from '@app/shared/pages/error404/error404.component';
-import { LoadingComponent } from '@app/shared/pages/loading/loading.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 import { BlogModule } from './modules/blog/blog.module';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,12 +32,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     LeftComponent,
     TopComponent,
     ContentComponent,
-    Error404Component,
-    LoadingComponent
+    Error404Component
   ],
   imports: [
     SharedModule,
     BlogModule,
+    CoreModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgZorroAntdModule,
@@ -49,7 +51,12 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    //进度条配置
+    NgProgressModule.withConfig({
+      color: '#1976d2'
+    }),
+    NgProgressHttpModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

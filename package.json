@@ -27,6 +27,8 @@
     "@angular/router": "~7.2.0",
     "@nguniversal/express-engine": "^7.1.1",
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",
+    "@ngx-progressbar/core": "^5.3.2",
+    "@ngx-progressbar/http": "^5.3.2",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "core-js": "^2.5.4",

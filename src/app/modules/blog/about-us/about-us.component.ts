@@ -53,6 +53,16 @@ export class AboutUsComponent implements OnInit {
         name: 'bootstrap',
         color: 'red'
       }]
+    },
+    {
+      skill: 'mini program',
+      frame: [{
+        name: 'wepy',
+        color: 'blue'
+      },{
+        name: 'mpvue',
+        color: 'red'
+      }]
     }
   ];
   constructor() { }
