@@ -1,0 +1,18 @@
+<nz-drawer [nzClosable]="false" [nzWidth]="300" [nzVisible]="visible" nzPlacement="right" [nzTitle]=""
+  (nzOnClose)="toggle()">
+  <div class="ng-blog-handler" (click)="toggle()">
+    <i *ngIf="!visible" nz-icon nzType="search" nzTheme="outline"></i>
+    <i *ngIf="visible" nz-icon nzType="close" nzTheme="outline"></i>
+  </div>
+  <app-search></app-search>  
+  <div class="ng-blog-tags ng-blog-flex ng-blog-flex--wrap">
+    <div class="ng-blog-tags__tag" *ngFor="let item of tag" (click)="clickHandle(item)">
+      <span class="ng-blog-tags__triangle" [ngStyle]="{'border-color': 'transparent '+item.bg_color+' transparent transparent'}"></span>
+      <span [ngStyle]="{'color': item.color,'background-color':item.bg_color}" style="display:inline-block;height:22px;padding: 0 7px;">
+          <i nz-icon nzType="tag" nzTheme="outline"></i>&nbsp;<span class="">{{item.name}}</span>
+      </span>
+      <!-- <nz-tag [nzColor]="item.bg_color" >
+      </nz-tag> -->
+    </div>
+  </div>
+</nz-drawer>

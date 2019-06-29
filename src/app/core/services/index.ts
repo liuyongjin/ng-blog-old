@@ -1,4 +1,5 @@
-import { ArticlesService } from "./article.service";
+import { ArticleService } from "./article.service";
+import { TagService } from "./tag.service";
 // const files = require.context('./', true, /.service.ts$/);
 // console.log(files('./articles.service.ts'))
 
@@ -24,5 +25,6 @@ import { ArticlesService } from "./article.service";
 // export default modules
 
 export {
-    ArticlesService,
+    ArticleService,
+    TagService
 }

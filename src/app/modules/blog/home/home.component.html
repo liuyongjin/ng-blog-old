@@ -2,32 +2,35 @@
     <app-top></app-top> 
     <div class="ng-blog-home__content">
         <div class="ng-blog-home__cart-list">
-            <nz-list [nzDataSource]="data" [nzRenderItem]="item"
+            <nz-list [nzDataSource]="article" [nzLoading]="article_loading" [nzRenderItem]="item"
                 [nzGrid]="{ gutter: 16, xs: 24, sm: 12, md: 8, lg: 8, xl: 6 }">
                 <ng-template #item let-item>
                     <nz-list-item [nzContent]="nzContent">
                         <ng-template #nzContent>
                             <nz-card [nzTitle]="item.title" [nzHoverable]="true" [nzCover]="coverTemplate">
-                                <nz-card-meta nzTitle="Card title" nzDescription="This is the description"
+                                <nz-card-meta  [nzDescription]="item.des"
                                     [nzAvatar]="avatarTemplate">
                                 </nz-card-meta>
                                 <div class="ng-blog-flex ng-blog-flex--j-right ng-blog-flex--a-center" style="width: 100%;line-height: 35px;height: 35px;">
-                                    <div><i nz-icon nzType="eye" nzTheme="outline"></i></div>&nbsp;&nbsp;
-                                    <div>浏览0次</div>  
+                                    <div style="padding-top: 2px;"><i nz-icon nzType="eye" nzTheme="outline"></i></div>&nbsp;&nbsp;
+                                    <div>浏览{{item.browse_count}}次</div>  
                                 </div>
                             </nz-card>
                             <ng-template #avatarTemplate>
-                                <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png">
+                                <nz-avatar [nzSrc]="base_url+'/static/imgs/avatar.jpg'">
                                 </nz-avatar>
                             </ng-template>
                             <ng-template #coverTemplate>
                                 <img alt="example"
-                                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+                                    [src]="base_url+item.main_img" />
                             </ng-template>
                         </ng-template>
                     </nz-list-item>
                 </ng-template>
             </nz-list>
         </div>
+    </div>
+    <div class="ng-blog-home__refresh" (click)="init()">
+        <p><i nz-icon nzType="reload" [nzSpin]="article_loading" nzTheme="outline"></i></p>
     </div>
 </div>

@@ -1,14 +1,28 @@
 @import '../../../styles/mixins';
 @import '../../../styles/mixins';
-@include b(home){
+
+@include b(home) {
     min-height: 90vh;
     min-height: calc(100vh - 84px);
-    // padding: 30px;
-    @include e(content){
-        // padding: 30px;
-        // background-color: $white;
+
+    @include e(content) {
+        margin-bottom: 30px;
     }
-    @include e(cart-list){
-        
+
+    @include e(cart-list) {
+   
+    }
+    @include e(refresh){
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 25px;
+        background-color: $ng-primary;
+        text-align: center;
+        color: $white;
+        position: fixed;
+        z-index: 1000;
+        top: 300px;
+        right: 0;
     }
 }

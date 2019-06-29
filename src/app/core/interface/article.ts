@@ -5,13 +5,13 @@ export interface Article {
 }
 
 export interface Result{
-    data:Array<data>|object;
+    data:Array<ArticleItem>|object;
     pageSize?:number;
     current?:number;
     total?:number;
 }
 
-interface data{
+export interface ArticleItem{
     id: number;
     title: string;
     create_time: string;

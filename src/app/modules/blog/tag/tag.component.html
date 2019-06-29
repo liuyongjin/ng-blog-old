@@ -1,3 +1,11 @@
 <div class="ng-blog-tag">
-  tag works!
+    <div class="ng-blog-tag__items">
+        <div class="ng-blog-tag__item">
+            <h3><i nz-icon nzType="tags" nzTheme="outline"></i>&nbsp;&nbsp;{{title}}</h3>
+            <ul>
+                <li  *ngFor="let item of article"><a routerLink="/home"><span>{{item.create_time | format}}</span>&nbsp;&nbsp;{{item.title}}&nbsp;&nbsp;<i nz-icon nzType="read" nzTheme="outline"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <app-drawer [tag]="tag" (selectTag)="selectTagHandle($event)"></app-drawer>  
 </div>

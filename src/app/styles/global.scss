@@ -4,6 +4,9 @@
 //工具样式__bem
 @include b(flex){
   display: flex;
+  @include m(wrap){
+    flex-wrap: wrap;
+  }
   @include m(flex-1){
     flex: 1;
   }
@@ -23,7 +26,7 @@
   @include m(a-right){
     align-items: flex-end;
   }
-  // @include e(left){
+  // @include e(left){ng-blog-flex__left
   //   width: 260px;
   // }
   // @include when(istest){
@@ -34,10 +37,10 @@
   // }
 }
 
-
 @include b(flex-wrap){
   flex-wrap: wrap;
 }
+
 
 // 重置样式
 html, body, div, span, applet, object, iframe,

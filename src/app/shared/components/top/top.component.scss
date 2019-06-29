@@ -12,6 +12,7 @@
     background-color: rgb(255,255,255);
     transition: top 1s;
     color: $font-color;
+    z-index: 1000;
     @include e(right){
         text-align: right;
     }

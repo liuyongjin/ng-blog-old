@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesService } from '@app/core/services';
+import { ArticleService } from '@app/core/services';
 import { Article } from '@app/core/interface/article';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pigeonhole',
@@ -11,12 +10,12 @@ import { Observable } from 'rxjs';
 export class PigeonholeComponent implements OnInit {
   public article:object={};
   public ObjectKeys = Object.keys;
-  constructor(private articlesService: ArticlesService) { }
+  constructor(private articlesService: ArticleService) { }
 
   ngOnInit() {
     this.articlesService.getPigeonhole().subscribe((res: Article) => {
       this.article=res.data.data;
-      console.log(this.article);
+      // console.log(this.article);
     });
   }
 
