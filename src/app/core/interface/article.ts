@@ -1,0 +1,27 @@
+export interface Article {
+    data:Result;
+    msg:string;
+    errorCode:number;
+}
+
+export interface Result{
+    data:Array<data>|object;
+    pageSize?:number;
+    current?:number;
+    total?:number;
+}
+
+interface data{
+    id: number;
+    title: string;
+    create_time: string;
+    browse_count?: number;
+    comment_count?: number;
+    content?: string;
+    des?: string;
+    main_img?: string;
+    praise_count?: number;
+    tags?: Array<object>;
+    update_time?: string;
+    status?: number;
+}

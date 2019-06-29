@@ -13,11 +13,18 @@
   @include m(a-center){
     align-items: center;
   }
+  // ng-blog-flex--j-center
+  @include m(j-between){
+    justify-content: space-between;
+  }
+  @include m(j-right){
+    justify-content: flex-end;
+  }
+  @include m(a-right){
+    align-items: flex-end;
+  }
   // @include e(left){
   //   width: 260px;
-  // }
-  // @include m(test){
-  //   background: #000000;
   // }
   // @include when(istest){
   //   background: #000000;

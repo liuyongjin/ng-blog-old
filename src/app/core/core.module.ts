@@ -8,7 +8,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
     {
       provide: 'BASE_CONFIG',
       useValue: {
-        base_url: 'https://reqres.in'
+        base_url: 'http://blog.com/api/v1'
       }
     }
   ],

@@ -1,8 +1,14 @@
 @import '../../../styles/mixins';
 @import '../../../styles/mixins';
 @include b(home){
-    min-height: 300vh;
-    // min-height: 90vh;
-    // min-height: calc(100vh - 84px);
-    background-color: $white;
+    min-height: 90vh;
+    min-height: calc(100vh - 84px);
+    // padding: 30px;
+    @include e(content){
+        // padding: 30px;
+        // background-color: $white;
+    }
+    @include e(cart-list){
+        
+    }
 }

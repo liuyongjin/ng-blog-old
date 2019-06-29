@@ -6,21 +6,26 @@
     <h3>L&nbsp;Y&nbsp;J</h3>
     <nav>
       <ul>
-        <li>
+        <li [ngClass]="{'active':router_path==='/home'}">
           <a routerLink="/home">
             {{ 'HOME' | translate }}
           </a>
         </li>
-        <li>
+        <li [ngClass]="{'active':router_path==='/pigeonhole'}">
           <a routerLink="/pigeonhole">
             {{'PIGEONHOLE'| translate}}
           </a>
         </li>
-        <li>
-            <a routerLink="/about-us">
-              {{'ABOUT_US'| translate}}
-            </a>
-          </li>
+        <li [ngClass]="{'active':router_path==='/tag'}">
+          <a routerLink="/tag">
+            {{'TAG'| translate}}
+          </a>
+        </li>
+        <li [ngClass]="{'active':router_path==='/about-us'}">
+          <a routerLink="/about-us">
+            {{'ABOUT_US'| translate}}
+          </a>
+        </li>
       </ul>
     </nav>
   </div>

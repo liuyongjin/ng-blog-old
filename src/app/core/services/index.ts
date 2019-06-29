@@ -1,4 +1,4 @@
-import { ArticlesService } from "./articles.service";
+import { ArticlesService } from "./article.service";
 // const files = require.context('./', true, /.service.ts$/);
 // console.log(files('./articles.service.ts'))
 

@@ -6,8 +6,7 @@ import { en_US, zh_CN, NzI18nService } from 'ng-zorro-antd';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
 // import { HttpClient } from '@angular/common/http';
-import { ArticlesService } from './core/services';
-import {Articles} from './core/interface/articles';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,12 +19,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   private lastScrollTop = 0;
   //该页面有些示例后期去掉
   //en-US zh-CN
-  constructor(public translate: TranslateService, private i18n: NzI18nService, @Inject(PLATFORM_ID) private platformId: Object,private articlesService:ArticlesService) {
+  constructor(public translate: TranslateService, private i18n: NzI18nService, @Inject(PLATFORM_ID) private platformId: Object) {
   }
   ngOnInit() {
-    this.articlesService.getArticles('2').subscribe((res:Articles) => {
-      console.log(res)
-    });
     this.initLanguage();
   }
   ngAfterViewInit(): void {

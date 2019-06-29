@@ -1,0 +1,7 @@
+@import '../../../styles/mixins';
+
+@include b(tag){
+    min-height: 90vh;
+    min-height: calc(100vh - 84px);
+    background-color: $white;
+}
