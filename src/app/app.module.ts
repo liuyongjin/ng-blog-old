@@ -8,7 +8,8 @@ import { CoreModule } from './core/core.module';
 import { BlogModule } from './modules/blog/blog.module';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { BaseInterceptor } from '@app/core/interceptors';
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -27,10 +28,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AppComponent,
   ],
   imports: [
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     SharedModule,
     BlogModule,
     CoreModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgZorroAntdModule,
     FormsModule,
@@ -50,7 +51,10 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     }),
     NgProgressHttpModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BaseInterceptor, multi: true },
+    { provide: NZ_I18N, useValue: zh_CN }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

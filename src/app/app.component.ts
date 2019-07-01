@@ -29,8 +29,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   public async initLanguage() {
     this.translate.setDefaultLang('zh_CN');
-    // 语言初始化(若未设置语言, 则取浏览器语言)
-    let currentLanguage = await localStorage.getItem('currentLanguage') || this.translate.getBrowserCultureLang()
+    // 语言初始化(若未设置语言, 则取浏览器语言,默认中文)
+    let currentLanguage = 'zh-CN';
+    if (isPlatformBrowser(this.platformId)) {
+      currentLanguage = await localStorage.getItem('currentLanguage') || this.translate.getBrowserCultureLang();
+    }
     // 当在assets/i18n中找不到对应的语言翻译时，使用'zh-CN'作为默认语言
     this.translate.use(currentLanguage);
     //设置antd的语言

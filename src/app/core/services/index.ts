@@ -1,5 +1,6 @@
 import { ArticleService } from "./article.service";
 import { TagService } from "./tag.service";
+import { ConfigService } from './config.service';
 // const files = require.context('./', true, /.service.ts$/);
 // console.log(files('./articles.service.ts'))
 
@@ -26,5 +27,6 @@ import { TagService } from "./tag.service";
 
 export {
     ArticleService,
-    TagService
+    TagService,
+    ConfigService
 }

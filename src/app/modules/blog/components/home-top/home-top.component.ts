@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Config,ConfigItem} from '@app/core/interface/config';
-import {ConfigService} from '@app/core/services/config.service';
+import {ConfigService} from '@app/core/services';
 @Component({
   selector: 'app-home-top',
   templateUrl: './home-top.component.html',
