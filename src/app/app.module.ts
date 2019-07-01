@@ -2,10 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { LeftComponent } from './shared/components/left/left.component';
-import { TopComponent } from './shared/components/top/top.component';
-import { ContentComponent } from './shared/components/content/content.component';
-import { Error404Component } from '@app/shared/pages/error404/error404.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
@@ -29,10 +25,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    LeftComponent,
-    TopComponent,
-    ContentComponent,
-    Error404Component
   ],
   imports: [
     SharedModule,

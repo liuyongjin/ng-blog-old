@@ -1,0 +1,43 @@
+@import '../../../styles/mixins';
+@include b(detail) {
+    background-color: $white;
+    padding: 20px;
+    min-height: 80vh;
+    min-height: calc(100vh - 104px);
+    h3{
+        color: $title-color;
+        font-size: 40px;
+        font-weight: 600;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $d-color;
+    }
+    @include e(timer){
+        font-size: 12px;
+        color: $font-color;
+        margin-top: 10px;
+    }
+    @include e(content){
+        margin-top: 30px;
+    }
+}
+@include b(tags){
+    @include e(tag){
+        display: inline-block;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        margin-right: 5px;
+        cursor: pointer;
+        pointer-events: auto;
+        font-size: 12px;
+        i{
+            margin-left: -8px;
+        }
+    }
+    @include e(triangle){
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border: 11px solid;
+        vertical-align: top;
+    }
+}

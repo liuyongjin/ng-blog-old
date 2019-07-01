@@ -21,7 +21,7 @@ export interface ArticleItem{
     des?: string;
     main_img?: string;
     praise_count?: number;
-    tags?: Array<object>;
+    tags?: any;
     update_time?: string;
     status?: number;
 }

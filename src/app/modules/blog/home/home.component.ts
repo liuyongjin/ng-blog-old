@@ -9,10 +9,10 @@ import { ArticleItem, Article } from '@app/core/interface/article';
 })
 export class HomeComponent implements OnInit {
   public article: ArticleItem[] = [];
-  public base_url: string;
+  public base_img_url: string;
   public article_loading: boolean = true;
   constructor(private articlesService: ArticleService, @Inject('BASE_CONFIG') private config) {
-    this.base_url = this.config.base_img_url;
+    this.base_img_url = this.config.base_img_url;
   }
 
   ngOnInit() {

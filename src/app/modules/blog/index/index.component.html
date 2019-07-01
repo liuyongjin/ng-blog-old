@@ -1,0 +1,36 @@
+<div class="ng-blog-index ng-blog-flex ng-blog-flex--a-center ng-blog-flex--j-center">
+  <div class="ng-blog-index__content">
+    <div class="ng-blog-index__img-wrapper">
+      <div class="img-bg"></div>
+      <img src="/assets/images/yasuo.jpg" alt="头像">
+      <h2>NG-BLOG</h2>
+    </div>
+    <h3>L Y J</h3>
+    <nav>
+      <ul class="ng-blog-flex ng-blog-flex--a-center ng-blog-flex--j-center">
+        <li>
+          <a routerLink="/home">
+            {{ 'HOME' | translate }}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/pigeonhole">
+            {{'PIGEONHOLE'| translate}}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/tag">
+            {{'TAG'| translate}}
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about-us">
+            {{'ABOUT_US'| translate}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<div class="ng-blog-bg"></div>
+<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>

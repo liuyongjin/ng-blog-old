@@ -2,9 +2,9 @@
 
 @include b(tag){
     min-height: 90vh;
-    min-height: calc(100vh - 84px);
+    min-height: calc(100vh - 104px);
     background-color: $white;
-    padding: 30px;
+    padding: 20px;
     @include e(item){
         padding-bottom: 30px;
         h3{

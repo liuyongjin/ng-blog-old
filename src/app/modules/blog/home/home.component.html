@@ -1,5 +1,5 @@
 <div class="ng-blog-home">
-    <app-top></app-top> 
+    <app-home-top></app-home-top> 
     <div class="ng-blog-home__content">
         <div class="ng-blog-home__cart-list">
             <nz-list [nzDataSource]="article" [nzLoading]="article_loading" [nzRenderItem]="item"
@@ -17,12 +17,12 @@
                                 </div>
                             </nz-card>
                             <ng-template #avatarTemplate>
-                                <nz-avatar [nzSrc]="base_url+'/static/imgs/avatar.jpg'">
+                                <nz-avatar [nzSrc]="base_img_url+'/static/imgs/avatar.jpg'">
                                 </nz-avatar>
                             </ng-template>
                             <ng-template #coverTemplate>
                                 <img alt="example"
-                                    [src]="base_url+item.main_img" />
+                                    [src]="base_img_url+item.main_img" />
                             </ng-template>
                         </ng-template>
                     </nz-list-item>

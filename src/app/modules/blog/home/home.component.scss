@@ -1,9 +1,8 @@
 @import '../../../styles/mixins';
-@import '../../../styles/mixins';
 
 @include b(home) {
     min-height: 90vh;
-    min-height: calc(100vh - 84px);
+    min-height: calc(100vh - 104px);
 
     @include e(content) {
         margin-bottom: 30px;
@@ -24,5 +23,6 @@
         z-index: 1000;
         top: 300px;
         right: 0;
+        cursor: pointer;
     }
 }

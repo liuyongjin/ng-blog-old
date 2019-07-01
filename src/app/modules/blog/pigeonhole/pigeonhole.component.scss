@@ -2,9 +2,9 @@
 
 @include b(pigeonhole){
     min-height: 90vh;
-    min-height: calc(100vh - 84px);
+    min-height: calc(100vh - 104px);
     background-color: $white;
-    padding: 30px;
+    padding: 20px;
     @include e(items) {
 
     }

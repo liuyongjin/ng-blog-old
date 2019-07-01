@@ -29,4 +29,8 @@ export class ArticleService {
   getRandomArticle(): Observable<Article> {
     return this.http.post<Article>(`${this.config.base_url}/article/randomList`, {});
   }
+  //获取详情
+  getArticleDetail(id:number): Observable<Article> {
+    return this.http.post<Article>(`${this.config.base_url}/article/detail`, {id:id});
+  }
 }

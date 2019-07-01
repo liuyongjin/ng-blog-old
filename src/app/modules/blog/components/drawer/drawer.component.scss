@@ -1,8 +1,10 @@
 @import '../../../../styles/mixins';
 
 @include b(drawer) {
+ 
 }
 @include b(tags){
+    margin-top: 20px;
     @include e(tag){
         display: block;
         margin-bottom: 5px;
@@ -10,6 +12,9 @@
         margin-right: 5px;
         cursor: pointer;
         pointer-events: auto;
+        i{
+            margin-left: -8px;
+        }
     }
     @include e(triangle){
         display: inline-block;
@@ -17,12 +22,6 @@
         height: 0;
         border: 11px solid;
         vertical-align: top;
-    }
-    ng-tag{
-        vertical-align: top;
-    }
-    .ant-tag{
-        border-radius: 0!important;
     }
 }
 

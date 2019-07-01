@@ -1,0 +1,26 @@
+<div class="ng-blog-detail" *ngIf="article">
+  <h3 class="ng-blog-flex ng-blog-flex--a-center">
+    <i nz-icon nzType="read" nzTheme="outline" style="margin-top: 4px;margin-right: 4px;"></i>
+    {{article.title}}&nbsp;&nbsp;
+    <span class="ng-blog-tags">
+      <span class="ng-blog-tags__tag" *ngFor="let item of article.tags">
+        <span class="ng-blog-tags__triangle"
+          [ngStyle]="{'border-color': 'transparent '+item.bg_color+' transparent transparent'}"></span>
+        <span [ngStyle]="{'color': item.color,'background-color':item.bg_color}"
+          style="display:inline-block;height:22px;padding: 0 7px;">
+          <i nz-icon nzType="tag" nzTheme="outline"></i>&nbsp;<span class="">{{item.name}}</span>
+        </span>
+      </span>
+    </span>
+  </h3>
+  <div class="ng-blog-detail__timer">
+    创建：{{article.create_time}}&nbsp;&nbsp;更新：{{article.update_time}}
+    <nz-statistic [nzValue]="1128 | number" [nzPrefix]="prefixL"></nz-statistic>
+    <ng-template #prefixL><i nz-icon nzType="like"></i></ng-template>
+    <nz-statistic [nzValue]="1128 | number" [nzPrefix]="prefixE"></nz-statistic>
+    <ng-template #prefixE><i nz-icon nzType="eye"></i></ng-template>
+  </div>
+  <div class="ng-blog-detail__content">
+    {{article.content}}
+  </div>
+</div>
