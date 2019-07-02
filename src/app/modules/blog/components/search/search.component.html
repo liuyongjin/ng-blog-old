@@ -4,9 +4,11 @@
     <input type="text" nz-input [(ngModel)]="searchValue" (input)="onInput($event.target?.value)"
       [nzAutocomplete]="auto" [placeholder]="'SEARCH_ARTICLE'|translate" />
     <nz-autocomplete nzBackfill #auto>
-      <nz-auto-option *ngFor="let option of article" [nzValue]="option.title">
-        {{ option.title }}
-      </nz-auto-option>
+      <a *ngFor="let option of article" [routerLink]="['/detail',option.id]">
+        <nz-auto-option [nzValue]="option.title">
+          {{ option.title }}
+        </nz-auto-option>
+      </a>
     </nz-autocomplete>
   </nz-input-group>
   <ng-template #suffixTemplate><i nz-icon nz-tooltip class="ant-input-clear-icon" nzTheme="fill" nzType="close-circle"

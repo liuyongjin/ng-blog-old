@@ -15,12 +15,14 @@
   </h3>
   <div class="ng-blog-detail__timer">
     创建：{{article.create_time}}&nbsp;&nbsp;更新：{{article.update_time}}
-    <nz-statistic [nzValue]="1128 | number" [nzPrefix]="prefixL"></nz-statistic>
-    <ng-template #prefixL><i nz-icon nzType="like"></i></ng-template>
-    <nz-statistic [nzValue]="1128 | number" [nzPrefix]="prefixE"></nz-statistic>
-    <ng-template #prefixE><i nz-icon nzType="eye"></i></ng-template>
   </div>
   <div class="ng-blog-detail__content">
     {{article.content}}
+  </div>
+  <div class="ng-blog-detail__count ng-blog-flex ng-blog-flex--j-right">
+    <nz-statistic [nzValue]="article.praise_count" [nzPrefix]="prefixL" (click)="praiseHandle()"></nz-statistic>
+    <ng-template #prefixL><i nz-icon nzType="like"></i></ng-template>
+    <nz-statistic [nzValue]="article.browse_count" [nzPrefix]="prefixE"></nz-statistic>
+    <ng-template #prefixE><i nz-icon nzType="eye"></i></ng-template>
   </div>
 </div>

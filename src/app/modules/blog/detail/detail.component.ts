@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class DetailComponent implements OnInit {
   public article: ArticleItem;
-
+  public id: any;
   constructor(private articlesService: ArticleService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -18,11 +18,31 @@ export class DetailComponent implements OnInit {
 
   init() {
     this.route.paramMap.subscribe((params) => {
-      let id=Number(params.get('id'));
-      this.articlesService.getArticleDetail(id).subscribe((res: Article) => {
-        this.article = res.data.data as ArticleItem;
-        console.log(this.article)
-      });
+      this.id = Number(params.get('id'))
+      this.browseHandle()
+      this.getDetail()
     })
+  }
+
+  getDetail():void{
+    this.articlesService.getArticleDetail(this.id).subscribe((res: Article) => {
+      this.article = res.data.data as ArticleItem;
+      // console.log(this.article)
+    });
+  }
+
+  //浏览量加一
+  browseHandle(): void {
+    this.articlesService.browse(this.id).subscribe((res: Article) => {
+      console.log(res)
+    })
+  }
+  //点赞加一
+  praiseHandle(): void {
+    this.articlesService.praise(this.id).subscribe((res) => {
+      if (res.errorCode === 0) {
+        this.getDetail()
+      }
+    });
   }
 }

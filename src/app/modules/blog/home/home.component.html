@@ -1,5 +1,5 @@
 <div class="ng-blog-home">
-    <app-home-top></app-home-top> 
+    <app-home-top></app-home-top>
     <div class="ng-blog-home__content">
         <div class="ng-blog-home__cart-list">
             <nz-list [nzDataSource]="article" [nzLoading]="article_loading" [nzRenderItem]="item"
@@ -7,23 +7,25 @@
                 <ng-template #item let-item>
                     <nz-list-item [nzContent]="nzContent">
                         <ng-template #nzContent>
-                            <nz-card [nzTitle]="item.title" [nzHoverable]="true" [nzCover]="coverTemplate">
-                                <nz-card-meta  [nzDescription]="item.des"
-                                    [nzAvatar]="avatarTemplate">
-                                </nz-card-meta>
-                                <div class="ng-blog-flex ng-blog-flex--j-right ng-blog-flex--a-center" style="width: 100%;line-height: 35px;height: 35px;">
-                                    <div style="padding-top: 2px;"><i nz-icon nzType="eye" nzTheme="outline"></i></div>&nbsp;&nbsp;
-                                    <div>浏览{{item.browse_count}}次</div>  
-                                </div>
-                            </nz-card>
-                            <ng-template #avatarTemplate>
-                                <nz-avatar [nzSrc]="base_img_url+'/static/imgs/avatar.jpg'">
-                                </nz-avatar>
-                            </ng-template>
-                            <ng-template #coverTemplate>
-                                <img alt="example"
-                                    [src]="base_img_url+item.main_img" />
-                            </ng-template>
+                            <a [routerLink]="['/detail',item.id]">
+                                <nz-card [nzTitle]="item.title" [nzHoverable]="true" [nzCover]="coverTemplate">
+                                    <nz-card-meta [nzDescription]="item.des" [nzAvatar]="avatarTemplate">
+                                    </nz-card-meta>
+                                    <div class="ng-blog-flex ng-blog-flex--j-right ng-blog-flex--a-center"
+                                        style="width: 100%;line-height: 35px;height: 35px;">
+                                        <div style="padding-top: 2px;"><i nz-icon nzType="eye" nzTheme="outline"></i>
+                                        </div>&nbsp;&nbsp;
+                                        <div>浏览{{item.browse_count}}次</div>
+                                    </div>
+                                </nz-card>
+                                <ng-template #avatarTemplate>
+                                    <nz-avatar [nzSrc]="base_img_url+'/static/imgs/yasuo.jpg'">
+                                    </nz-avatar>
+                                </ng-template>
+                                <ng-template #coverTemplate>
+                                    <img alt="example" [src]="base_img_url+item.main_img" />
+                                </ng-template>
+                            </a>
                         </ng-template>
                     </nz-list-item>
                 </ng-template>

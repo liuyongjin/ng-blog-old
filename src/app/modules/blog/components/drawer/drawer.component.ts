@@ -11,7 +11,7 @@ import { TagItem } from '@app/core/interface/tag';
 export class DrawerComponent implements OnInit {
   @Input() tag: TagItem[];
   @Output() selectTag = new EventEmitter<boolean>();
-  visible = true;
+  visible = false;
 
 
   constructor() { }

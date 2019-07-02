@@ -58,7 +58,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     let nav = this.appTop.el.nativeElement.querySelector('.ng-blog-header');
     nav.style.top = '0px';
     nav.style.backgroundColor = 'rgb(255, 255, 255)';
-    this.scroll = fromEvent(this.layout.elementRef.nativeElement, 'scroll').pipe(throttleTime(100)).subscribe((e: Event) => {
+    this.scroll = fromEvent(this.layout.elementRef.nativeElement, 'scroll').pipe(throttleTime(50)).subscribe((e: Event) => {
       let target = <HTMLElement>e.target;
       let scrollTop = target.scrollTop;
       let diff = scrollTop - this.lastScrollTop > 0;
@@ -86,12 +86,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.lastScrollTop = scrollTop;
     });
   }
-
-  // testHttp() {
-  //   this.http.get('https://reqres.in/api/users?delay=2').subscribe(res => {
-  //     console.log(res);
-  //   }); private http: HttpClient,
-  // }
   ngOnDestory() {
     this.scroll.unsubscribe();
   }

@@ -33,4 +33,12 @@ export class ArticleService {
   getArticleDetail(id:number): Observable<Article> {
     return this.http.post<Article>(`${this.config.base_url}/article/detail`, {id:id});
   }
+  //点赞
+  praise(id:number): Observable<Article> {
+    return this.http.post<Article>(`${this.config.base_url}/article/praise`, {id:id});
+  }
+  //浏览
+  browse(id:number): Observable<Article> {
+    return this.http.post<Article>(`${this.config.base_url}/article/browse`, {id:id});
+  }
 }
