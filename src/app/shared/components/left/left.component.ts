@@ -8,10 +8,8 @@ import { NavigationEnd, Router } from '@angular/router';
 export class LeftComponent implements OnInit {
 
   public router_path: string;
-  public base_img_url: string;
 
-  constructor(private router: Router, @Inject('BASE_CONFIG') private config) {
-    this.base_img_url = this.config.base_img_url;
+  constructor(private router: Router) {
   }
 
   ngOnInit() {

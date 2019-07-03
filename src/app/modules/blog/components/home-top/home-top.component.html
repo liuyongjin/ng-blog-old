@@ -3,7 +3,9 @@
     <div nz-col nzXs="24" nzSm="12" nzMd="8" nzLg="8" nzXl="6" nzXl="6">
       <div class="ng-blog-top__item">
         <h3 class="ng-blog-flex ng-blog-flex--j-between ng-blog-flex--a-center">
-          <span>{{ 'VISITS' | translate }}</span><i nz-icon nzType="info-circle" nzTheme="outline"></i></h3>
+          <span>{{ 'VISITS' | translate }}</span>
+          <span nz-tooltip [nzTitle]="'VISITS' | translate"><i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+        </h3>
         <h2>{{config[0].config_value}}</h2>
 
         <div class="ng-blog-top__footer"></div>
@@ -12,7 +14,9 @@
     <div nz-col nzXs="24" nzSm="12" nzMd="8" nzLg="8" nzXl="6" nzXl="6">
       <div class="ng-blog-top__item">
         <h3 class="ng-blog-flex ng-blog-flex--j-between ng-blog-flex--a-center">
-          <span>{{ 'ARTICLE_NUM' | translate }}</span><i nz-icon nzType="info-circle" nzTheme="outline"></i></h3>
+          <span>{{ 'ARTICLE_NUM' | translate }}</span>
+          <span nz-tooltip [nzTitle]="'ARTICLE_NUM' | translate"><i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+        </h3>
         <h2>{{config[1].config_value}}</h2>
 
         <div class="ng-blog-top__footer"></div>
@@ -21,7 +25,9 @@
     <div nz-col nzXs="24" nzSm="12" nzMd="8" nzLg="8" nzXl="6" nzXl="6">
       <div class="ng-blog-top__item">
         <h3 class="ng-blog-flex ng-blog-flex--j-between ng-blog-flex--a-center">
-          <span>{{ 'TAG_POPULATION' | translate }}</span><i nz-icon nzType="info-circle" nzTheme="outline"></i></h3>
+          <span>{{ 'TAG_POPULATION' | translate }}</span>
+          <span nz-tooltip [nzTitle]="'TAG_POPULATION' | translate"><i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+        </h3>
         <h2>{{config[2].config_value}}</h2>
 
         <div class="ng-blog-top__footer"></div>
@@ -30,7 +36,9 @@
     <div nz-col nzXs="24" nzSm="12" nzMd="8" nzLg="8" nzXl="6" nzXl="6">
       <div class="ng-blog-top__item">
         <h3 class="ng-blog-flex ng-blog-flex--j-between ng-blog-flex--a-center">
-          <span>{{ 'RUNNING_TIME' | translate }}</span><i nz-icon nzType="info-circle" nzTheme="outline"></i></h3>
+          <span>{{ 'RUNNING_TIME' | translate }}</span>
+          <span nz-tooltip [nzTitle]="'RUNNING_TIME' | translate"><i nz-icon nzType="info-circle" nzTheme="outline"></i></span>
+        </h3>
         <h2>{{config[3].config_value|formatRunningTime}}</h2>
 
         <div class="ng-blog-top__footer"></div>
