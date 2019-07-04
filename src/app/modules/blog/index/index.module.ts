@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { IndexComponent } from '@blog/index/index.component';
+import { IndexComponent } from './index.component';
 import { IndexRoutingModule } from './index-routing.module';
 import { SharedModule } from '@app/shared/shared.module';
 

@@ -10,13 +10,16 @@ import { TopComponent } from '@app/shared/components/top/top.component';
 import { ContentComponent } from '@app/shared/components/content/content.component';
 import { Error404Component } from '@app/shared/pages/error404/error404.component';
 import { ParticlesModule } from 'angular-particle';
+import { FormatPipe } from '@blog/pipe/format.pipe';
+
 @NgModule({
   declarations: [
     SearchComponent,
     LeftComponent,
     TopComponent,
     Error404Component,
-    ContentComponent
+    ContentComponent,
+    FormatPipe
   ],
   imports: [
     RouterModule,
@@ -36,7 +39,8 @@ import { ParticlesModule } from 'angular-particle';
     NgZorroAntdModule,
     TranslateModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    FormatPipe
   ]
 })
 export class SharedModule { }

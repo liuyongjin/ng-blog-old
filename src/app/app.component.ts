@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   private lastScrollTop = 0;
   public router_path: string='/';
   //该页面有些示例后期去掉
-  //en-US zh-CN
+  //en_US zh_CN
   constructor(public translate: TranslateService, private i18n: NzI18nService, @Inject(PLATFORM_ID) private platformId: Object,private router: Router) {
   }
   ngOnInit() {
@@ -42,11 +42,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   public initLanguage() {
     this.translate.setDefaultLang('zh_CN');
     // 语言初始化(若未设置语言, 则取浏览器语言,默认中文)
-    let currentLanguage = 'zh-CN';
+    let currentLanguage = 'zh_CN';
     if (isPlatformBrowser(this.platformId)) {
-      currentLanguage = localStorage.getItem('currentLanguage') || this.translate.getBrowserCultureLang();
+      currentLanguage = localStorage.getItem('currentLanguage') || 'zh_CN';
     }
-    // 当在assets/i18n中找不到对应的语言翻译时，使用'zh-CN'作为默认语言
+    // 当在assets/i18n中找不到对应的语言翻译时，使用'zh_CN'作为默认语言
     this.translate.use(currentLanguage);
     //设置antd的语言
     this.i18n.setLocale(currentLanguage === 'en_US' ? en_US : zh_CN);
