@@ -33,4 +33,4 @@
   </div>
 </div>
 <div class="ng-blog-bg"></div>
-<particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>
+<particles *ngIf="show_particles" [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles>

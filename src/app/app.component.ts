@@ -1,7 +1,6 @@
-import { Component, Inject, ViewChild, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, Inject, ViewChild, OnInit, AfterViewInit,PLATFORM_ID,OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID } from '@angular/core';
 import { en_US, zh_CN, NzI18nService } from 'ng-zorro-antd';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
@@ -12,9 +11,9 @@ import { throttleTime } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild("layout") layout: any;
-  @ViewChild("appTop") appTop: any;
+export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild("layout", {static: false}) layout: any;
+  @ViewChild("appTop", {static: false}) appTop: any;
   private scroll = null;
   private lastScrollTop = 0;
   //该页面有些示例后期去掉
@@ -27,12 +26,15 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.initScroll();
   }
-  public async initLanguage() {
+  ngOnDestroy() {
+    this.scroll&&this.scroll.unsubscribe();
+  }
+  public initLanguage() {
     this.translate.setDefaultLang('zh_CN');
     // 语言初始化(若未设置语言, 则取浏览器语言,默认中文)
     let currentLanguage = 'zh-CN';
     if (isPlatformBrowser(this.platformId)) {
-      currentLanguage = await localStorage.getItem('currentLanguage') || this.translate.getBrowserCultureLang();
+      currentLanguage = localStorage.getItem('currentLanguage') || this.translate.getBrowserCultureLang();
     }
     // 当在assets/i18n中找不到对应的语言翻译时，使用'zh-CN'作为默认语言
     this.translate.use(currentLanguage);
@@ -86,7 +88,5 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.lastScrollTop = scrollTop;
     });
   }
-  ngOnDestory() {
-    this.scroll.unsubscribe();
-  }
+  
 }

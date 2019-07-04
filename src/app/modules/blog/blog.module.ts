@@ -11,10 +11,9 @@ import { HomeTopComponent } from './components/home-top/home-top.component';
 import { DrawerComponent } from './components/drawer/drawer.component';
 import { DetailComponent } from './detail/detail.component';
 import { FormatRunningTimePipe } from './pipe/format-running-time.pipe';
-import { IndexComponent } from './index/index.component';
 
 @NgModule({
-  declarations: [HomeComponent, AboutUsComponent, PigeonholeComponent, TagComponent, FormatPipe, HomeTopComponent, DrawerComponent, DetailComponent, FormatRunningTimePipe, IndexComponent],
+  declarations: [HomeComponent, AboutUsComponent, PigeonholeComponent, TagComponent, FormatPipe, HomeTopComponent, DrawerComponent, DetailComponent, FormatRunningTimePipe],
   imports: [
     BlogRoutingModule,
     SharedModule

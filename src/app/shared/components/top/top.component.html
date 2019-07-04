@@ -8,8 +8,10 @@
       <a href="https://www.baidu.com" target="_blank" class="ng-blog-header__github">
         <i nz-icon nzType="github" nzTheme="outline"></i>
       </a>
-      <nz-dropdown [nzPlacement]="'bottomCenter'">
-        <a nz-dropdown><i nz-icon nzType="global" nzTheme="outline"></i></a>
+      <a nz-dropdown [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'">
+        <i nz-icon nzType="global" nzTheme="outline"></i>
+      </a>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu nzSelectable>
           <li nz-menu-item (click)="selectLanguage('zh_CN')">
             <a>中文</a>
@@ -18,7 +20,7 @@
             <a>英文</a>
           </li>
         </ul>
-      </nz-dropdown>
+      </nz-dropdown-menu>
     </div>
   </div>
 </header>

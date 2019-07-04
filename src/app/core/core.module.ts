@@ -1,5 +1,4 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
-//暂时不实现功能
 @NgModule({
   declarations: [],
   imports: [

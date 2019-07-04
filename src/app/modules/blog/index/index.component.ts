@@ -1,4 +1,5 @@
-import { Inject, Component, OnInit } from '@angular/core';
+import { Inject, Component, OnInit,PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-index',
@@ -7,13 +8,19 @@ import { Inject, Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
   public base_img_url: string;
+  public show_particles:boolean=false;
+
   myStyle: object = {};
   myParams: object = {};
   width: number = 100;
   height: number = 100;
 
-  constructor(@Inject('BASE_CONFIG') private config) {
+  constructor(@Inject('BASE_CONFIG') private config, @Inject(PLATFORM_ID) private platformId: Object) {
     this.base_img_url = this.config.base_img_url;
+    if (isPlatformBrowser(this.platformId)) {
+      this.show_particles=true;
+    }
+
   }
 
   ngOnInit() {

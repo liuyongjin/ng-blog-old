@@ -6,9 +6,6 @@ import { differenceInHours,differenceInDays,differenceInMinutes } from 'date-fns
 export class FormatRunningTimePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    // let diffM=differenceInMinutes(new Date(),Number(value*1000));
-    // let diffT:any=Math.floor(diffM%(24*60)).toFixed(0);
-    // let diffD=Number(diffM/(24*60)).toFixed(0);
     let now:any=new Date();
     let diff=now-value*1000;
     let diffD=Math.floor(diff/(24*3600*1000))

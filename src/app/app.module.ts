@@ -19,7 +19,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { IconDefinition } from '@ant-design/icons-angular';
 
-// 引入你需要的图标
+// 引入需要的图标
 import {
   GlobalOutline,
   GithubOutline,
