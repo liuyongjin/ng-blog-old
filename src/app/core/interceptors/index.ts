@@ -38,7 +38,8 @@ export class BaseInterceptor implements HttpInterceptor {
         this.notification.error('服务器错误', ``);
         break;
       default:
-        this.notification.error('请求错误', ``);
+        break;
+        // this.notification.error('请求错误', ``);
     }
     return of(event);
   }
