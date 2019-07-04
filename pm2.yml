@@ -1,7 +1,0 @@
-apps:
-  - script: ./dist/server.js
-    name: ng-blog
-    env_production:
-      NODE_ENV: production
-      HOST: localhost
-      PORT: 8888
