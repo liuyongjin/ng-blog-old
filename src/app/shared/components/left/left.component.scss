@@ -27,11 +27,9 @@
                 height: 100%;
                 color: $font-color;
             }
-            &.active{
+            a.active{
                 background-color: $font-color2;
-                a{
-                    color: $white;
-                }
+                color: $white;
             }
         }
     }

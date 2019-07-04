@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '@app/core/services';
 import { Article } from '@app/core/interface/article';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-pigeonhole',
@@ -10,12 +11,11 @@ import { Article } from '@app/core/interface/article';
 export class PigeonholeComponent implements OnInit {
   public article:object={};
   public ObjectKeys = Object.keys;
-  constructor(private articlesService: ArticleService) { }
+  constructor(private articlesService: ArticleService,private titleService: Title) {this.titleService.setTitle('归档');}
 
   ngOnInit() {
     this.articlesService.getPigeonhole().subscribe((res: Article) => {
       this.article=res.data.data;
-      // console.log(this.article);
     });
   }
 

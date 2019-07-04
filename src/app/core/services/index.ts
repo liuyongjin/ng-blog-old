@@ -1,12 +1,12 @@
 import { ArticleService } from "./article.service";
 import { TagService } from "./tag.service";
 import { ConfigService } from './config.service';
+
 // const files = require.context('./', true, /.service.ts$/);
-// console.log(files('./articles.service.ts'))
 
 // files.keys().forEach(key => {
-//     // console.log(key)
-//     // console.log(files(key))
+//     console.log(key)
+//     console.log(files(key))
 //     export files(key)
 // });
 // it will auto require all vuex module from modules file
@@ -22,8 +22,6 @@ import { ConfigService } from './config.service';
 //     return modules
 // }, {})
 // console.log(modules);
-// console.log(ArticlesService);
-// export default modules
 
 export {
     ArticleService,

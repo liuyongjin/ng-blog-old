@@ -1,10 +1,10 @@
 <ng-progress #progress [spinner]="false"></ng-progress>
 <nz-layout>
-  <nz-sider>
+  <nz-sider *ngIf="router_path!=='/'">
     <app-left class="ng-blog-flex__left"></app-left>
   </nz-sider>
   <nz-layout #layout>
-    <app-top (selectLang)="selectLanguage($event)" #appTop></app-top>
+    <app-top *ngIf="router_path!=='/'" (selectLang)="selectLanguage($event)" #appTop></app-top>
     <nz-content>
       <app-content></app-content>
     </nz-content>

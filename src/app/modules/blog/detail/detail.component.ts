@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleService } from '@app/core/services';
 import { ArticleItem, Article } from '@app/core/interface/article';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -10,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class DetailComponent implements OnInit {
   public article: ArticleItem;
   public id: any;
-  constructor(private articlesService: ArticleService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private articlesService: ArticleService, private router: Router, private route: ActivatedRoute,private titleService: Title) { }
 
   ngOnInit() {
     this.init()
@@ -27,14 +29,13 @@ export class DetailComponent implements OnInit {
   getDetail():void{
     this.articlesService.getArticleDetail(this.id).subscribe((res: Article) => {
       this.article = res.data.data as ArticleItem;
-      // console.log(this.article)
+      this.titleService.setTitle(this.article.title);
     });
   }
 
   //浏览量加一
   browseHandle(): void {
     this.articlesService.browse(this.id).subscribe((res: Article) => {
-      console.log(res)
     })
   }
   //点赞加一

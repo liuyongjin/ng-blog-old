@@ -1,5 +1,4 @@
-import { Inject, Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-left',
   templateUrl: './left.component.html',
@@ -9,18 +8,8 @@ export class LeftComponent implements OnInit {
 
   public router_path: string;
 
-  constructor(private router: Router) {
+  constructor() {
   }
-
   ngOnInit() {
-    this.onEvents();
-  }
-
-  onEvents() {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {
-        this.router_path = event.urlAfterRedirects
-      }
-    })
   }
 }

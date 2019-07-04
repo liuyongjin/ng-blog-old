@@ -1,6 +1,7 @@
 import { Inject, Component, OnInit } from '@angular/core';
 import { ArticleService } from '@app/core/services';
 import { ArticleItem, Article } from '@app/core/interface/article';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,9 @@ export class HomeComponent implements OnInit {
   public article: ArticleItem[] = [];
   public base_img_url: string;
   public article_loading: boolean = true;
-  constructor(private articlesService: ArticleService, @Inject('BASE_CONFIG') private config) {
+  constructor(private articlesService: ArticleService, @Inject('BASE_CONFIG') private config,private titleService: Title) {
     this.base_img_url = this.config.base_img_url;
+    this.titleService.setTitle('首页');
   }
 
   ngOnInit() {

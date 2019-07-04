@@ -3,6 +3,7 @@ import { Tag } from '@app/core/interface/tag';
 import { TagService } from '@app/core/services';
 import { ArticleService } from '@app/core/services';
 import { ArticleItem,Article } from '@app/core/interface/article';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-tag',
@@ -13,7 +14,7 @@ export class TagComponent implements OnInit {
   public article:ArticleItem[] = [];
   public title = "";
   public tag = [];
-  constructor(private tagService: TagService,private articlesService: ArticleService) { }
+  constructor(private tagService: TagService,private articlesService: ArticleService,private titleService: Title) { this.titleService.setTitle('标签');}
 
   ngOnInit() {
     this.init();

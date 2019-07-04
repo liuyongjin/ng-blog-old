@@ -4,6 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { en_US, zh_CN, NzI18nService } from 'ng-zorro-antd';
 import { fromEvent } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
+import { NavigationEnd, Router } from '@angular/router';
 // import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -16,11 +17,13 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild("appTop", {static: false}) appTop: any;
   private scroll = null;
   private lastScrollTop = 0;
+  public router_path: string='/';
   //该页面有些示例后期去掉
   //en-US zh-CN
-  constructor(public translate: TranslateService, private i18n: NzI18nService, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(public translate: TranslateService, private i18n: NzI18nService, @Inject(PLATFORM_ID) private platformId: Object,private router: Router) {
   }
   ngOnInit() {
+    this.onEvents();
     this.initLanguage();
   }
   ngAfterViewInit(): void {
@@ -28,6 +31,13 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
   ngOnDestroy() {
     this.scroll&&this.scroll.unsubscribe();
+  }
+  onEvents() {
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationEnd) {
+        this.router_path = event.urlAfterRedirects
+      }
+    })
   }
   public initLanguage() {
     this.translate.setDefaultLang('zh_CN');
@@ -56,6 +66,9 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   private initScroll(): void {
+    if(!this.appTop){
+      return;
+    }
     //滚动隐藏导航动画
     let nav = this.appTop.el.nativeElement.querySelector('.ng-blog-header');
     nav.style.top = '0px';

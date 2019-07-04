@@ -1,6 +1,6 @@
 import { Inject, Component, OnInit,PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-
+import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -15,12 +15,12 @@ export class IndexComponent implements OnInit {
   width: number = 100;
   height: number = 100;
 
-  constructor(@Inject('BASE_CONFIG') private config, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject('BASE_CONFIG') private config, @Inject(PLATFORM_ID) private platformId: Object,private titleService: Title) {
     this.base_img_url = this.config.base_img_url;
     if (isPlatformBrowser(this.platformId)) {
       this.show_particles=true;
     }
-
+    this.titleService.setTitle('angular博客');
   }
 
   ngOnInit() {
