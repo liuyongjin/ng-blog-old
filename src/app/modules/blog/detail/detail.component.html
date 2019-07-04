@@ -21,8 +21,8 @@
   </div>
   <div class="ng-blog-detail__count ng-blog-flex ng-blog-flex--j-right">
     <nz-statistic [nzValue]="article.praise_count" [nzPrefix]="prefixL" (click)="praiseHandle()"></nz-statistic>
-    <ng-template #prefixL><i nz-icon nzType="like"></i></ng-template>
+    <ng-template #prefixL><i nz-icon nzType="like" nzTheme="outline"></i></ng-template>
     <nz-statistic [nzValue]="article.browse_count" [nzPrefix]="prefixE"></nz-statistic>
-    <ng-template #prefixE><i nz-icon nzType="eye"></i></ng-template>
+    <ng-template #prefixE><i nz-icon nzType="eye" nzTheme="outline"></i></ng-template>
   </div>
 </div>
