@@ -16,8 +16,7 @@
   <div class="ng-blog-detail__timer">
     创建：{{article.create_time}}&nbsp;&nbsp;更新：{{article.update_time}}
   </div>
-  <div class="ng-blog-detail__content">
-    {{article.content}}
+  <div class="ng-blog-detail__content" [innerHTML]="securityHTML(article.content|marked)">
   </div>
   <div class="ng-blog-detail__count ng-blog-flex ng-blog-flex--j-right">
     <nz-statistic [nzValue]="article.praise_count" [nzPrefix]="prefixL" (click)="praiseHandle()"></nz-statistic>

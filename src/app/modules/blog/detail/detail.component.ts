@@ -1,19 +1,20 @@
-import { Component,AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit} from '@angular/core';
 import { ArticleService } from '@app/core/services';
 import { ArticleItem, Article } from '@app/core/interface/article';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
-
+import { DomSanitizer } from "@angular/platform-browser";
 @Component({
   selector: 'app-detail',
+  // warning: few browsers support shadow DOM encapsulation at this time
+  // encapsulation: ViewEncapsulation.None,, ViewEncapsulation 
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit,AfterViewInit {
+export class DetailComponent implements OnInit, AfterViewInit {
   public article: ArticleItem;
   public id: any;
-  constructor(private articlesService: ArticleService, private router: Router, private route: ActivatedRoute,private titleService: Title) { }
-
+  constructor(private articlesService: ArticleService, private router: Router, private route: ActivatedRoute, private titleService: Title, public dz: DomSanitizer) { }
   ngOnInit() {
     this.init()
   }
@@ -27,8 +28,8 @@ export class DetailComponent implements OnInit,AfterViewInit {
       this.getDetail()
     })
   }
-  gittalkInit():void{
-    var G=(<any>window).Gitalk;
+  gittalkInit(): void {
+    var G = (<any>window).Gitalk;
     // 生成 gitalk 插件
     var gitalk = new G({
       clientID: '303c3f5966f9961e2f2d', //Client ID
@@ -39,14 +40,18 @@ export class DetailComponent implements OnInit,AfterViewInit {
       id: decodeURI(window.location.pathname),      // Ensure uniqueness and length less than 50
       distractionFreeMode: false  // Facebook-like distraction free mode
     })
-    
+
     gitalk.render('gitalk-container')
   }
-  getDetail():void{
+  getDetail(): void {
     this.articlesService.getArticleDetail(this.id).subscribe((res: Article) => {
       this.article = res.data.data as ArticleItem;
       this.titleService.setTitle(this.article.title);
     });
+  }
+  //处理文章内容
+  securityHTML(strHTML: any) {
+    return this.dz.bypassSecurityTrustHtml(strHTML);
   }
 
   //浏览量加一
