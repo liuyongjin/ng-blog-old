@@ -36,7 +36,7 @@ export class DetailComponent implements OnInit,AfterViewInit {
       repo: 'ng-blog-gittalk',//仓库名称
       owner: 'liuyongjin',//仓库拥有者
       admin: ['liuyongjin'],
-      id: location.href,      // Ensure uniqueness and length less than 50
+      id: decodeURI(window.location.pathname),      // Ensure uniqueness and length less than 50
       distractionFreeMode: false  // Facebook-like distraction free mode
     })
     
