@@ -18,7 +18,7 @@ export class ArticleService {
   }
   //搜索文章(名称)
   searchArticle(title:string): Observable<Article> {
-    return this.http.post<Article>(`${this.config.base_url}/article/index`, {title:title});
+    return this.http.post<Article>(`${this.config.base_url}/article/searchArticle`, {title:title});
   }
   //搜索文章(tag_id)
   searchArticleByTag(tag_id:number): Observable<Article> {
