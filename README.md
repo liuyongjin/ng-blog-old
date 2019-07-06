@@ -1,27 +1,38 @@
-# NgBlog
+# ng-blog
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+简体中文 | [English](./README-en-US.md)
 
-## Development server
+# 说明
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+>  开发环境 windows
 
-## Code scaffolding
+>  部署环境 linux+nginx 地址：[https://liuyongjin.cn](https://liuyongjin.cn)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+>  相关项目地址：[前端项目地址](https://github.com/liuyongjin/ng-blog)  、 [后台管理系统地址](https://github.com/liuyongjin/blog-admin-pro)
 
-## Build
+>  如果对您对此项目有兴趣，可以点 "Star" 支持一下 谢谢！ ^_^
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 技术栈
 
-## Running unit tests
+angular8+typescript
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## 项目运行
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+npm install
 
-## Further help
+npm ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+访问: http://localhost:4200
+
+## 项目编译
+
+npm run build:ssr 打包客户端和服务端渲染程序
+
+## 测试
+
+ng test
+
+## 端到端测试
+
+ng e2e
