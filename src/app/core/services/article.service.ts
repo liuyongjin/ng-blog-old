@@ -22,7 +22,7 @@ export class ArticleService {
   }
   //搜索文章(tag_id)
   searchArticleByTag(tag_id:number): Observable<Article> {
-    return this.http.post<Article>(`${this.config.base_url}/article/index`, {tags_id:[tag_id]});
+    return this.http.post<Article>(`${this.config.base_url}/article/searchArticle`, {tag_id:tag_id});
   }
 
   //随机获取文章
