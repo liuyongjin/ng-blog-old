@@ -14,6 +14,8 @@ English | [简体中文](./README.md)
 
 >  [Background management system address](https://github.com/liuyongjin/blog-admin-pro)
 
+>  [Background API address](https://github.com/liuyongjin/blog_api)
+
 >  If you are interested in this project, you can click "Star" to support it. Thank you！ ^_^
 
 ## Technology stack
