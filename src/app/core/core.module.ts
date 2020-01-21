@@ -9,8 +9,8 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
       useValue: {
         // base_url: 'http://blog.com/api/v1',
         // base_img_url: 'http://blog.com'
-        base_url: 'https://api.liuyongjin.cn/api/v1',
-        base_img_url: 'https://api.liuyongjin.cn'
+        base_url: 'http://api.liuyongjin.cn/api/v1',
+        base_img_url: 'http://api.liuyongjin.cn'
       }
     }
   ],
