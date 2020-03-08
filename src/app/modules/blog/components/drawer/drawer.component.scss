@@ -30,7 +30,7 @@
 
 
 @include b(handler) {
-    position: absolute;
+    position: fixed;
     right: 300px;
     top: 300px;
     z-index: 1000;
